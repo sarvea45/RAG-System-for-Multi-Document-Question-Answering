@@ -53,7 +53,7 @@ def upsert_vectors(chunks: List[Dict[str, Any]], embeddings: List[List[float]]):
     for i in range(0, len(vectors), batch_size):
         index.upsert(vectors=vectors[i:i + batch_size])
 
-def retrieve_context(query_embedding: List[float], top_k: int = 5, threshold: float = 0.75) -> List[Dict[str, Any]]:
+def retrieve_context(query_embedding: List[float], top_k: int = 5, threshold: float = 0.3) -> List[Dict[str, Any]]:
     """
     Queries Pinecone and filters out results below the threshold.
     Returns the metadata of the passing chunks.
