@@ -50,7 +50,7 @@ def generate_answer(query: str, retrieved_chunks: List[Dict[str, Any]], chat_his
     
     # Use LLaMA 3 8B model via Groq for blazing fast inference
     response = client.chat.completions.create(
-        model="llama3-8b-8192",
+        model="llama-3.1-8b-instant",
         messages=messages,
         temperature=0.0,
         response_format={"type": "json_object"}
