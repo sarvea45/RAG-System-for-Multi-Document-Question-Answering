@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./rag_history.db:/app/rag_history.db
+      - ./src:/app/src
+    env_file:
+      - .env
+    environment:
+      - DATABASE_URL=sqlite:////app/rag_history.db
