@@ -42,7 +42,7 @@ async def chat_endpoint(request: ChatRequest, db: Session = Depends(get_db)):
         query_embedding = get_embeddings([request.query])[0]
         
         # 3. Retrieve Context (with thresholding)
-        retrieved_chunks = retrieve_context(query_embedding, top_k=5)
+        retrieved_chunks = retrieve_context(query_embedding, top_k=15)
         
         # 4. Graceful Failure Check
         if not retrieved_chunks:
