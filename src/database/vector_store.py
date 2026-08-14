@@ -67,9 +67,5 @@ def retrieve_context(query_embedding: List[float], top_k: int = 5, threshold: fl
         include_metadata=True
     )
     
-    valid_results = []
-    for match in response.matches:
-        if match.score >= threshold:
-            valid_results.append(match.metadata)
-            
+    valid_results = [match.metadata for match in response.matches]
     return valid_results
