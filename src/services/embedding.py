@@ -3,7 +3,7 @@ from sentence_transformers import SentenceTransformer
 
 # Load the local embedding model (downloads automatically on first run)
 # 'all-MiniLM-L6-v2' is highly efficient and maps to 384 dimensions.
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer('BAAI/bge-small-en-v1.5')
 
 def get_embeddings(texts: List[str]) -> List[List[float]]:
     """
